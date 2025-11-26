@@ -1,0 +1,634 @@
+*,*::before,*::after{box-sizing:border-box}*{margin:0;padding:0}body{min-height:100vh;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}ul[role='list'],ol[role='list']{list-style:none}h1,h2,h3,h4,button,input,label{line-height:1.1}h1,h2,h3,h4{text-wrap:balance}p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}p{text-wrap:pretty}a:not([class]){text-decoration-skip-ink:auto;color:currentColor}img,picture,video,canvas,svg{display:block;max-width:100%}input,button,textarea,select{font:inherit}textarea:not([rows]){min-height:10em}:target{scroll-margin-block:5ex}#root,#__next{isolation:isolate}@media (prefers-reduced-motion:no-preference){html{interpolate-size:allow-keywords}}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}:focus-visible{outline:2px solid currentColor;outline-offset:2px}:focus:not(:focus-visible){outline:none}button,input[type="submit"],input[type="reset"]{background:none;color:inherit;border:none;padding:0;font:inherit;cursor:pointer;outline:inherit}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}button:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+
+
+/*************************************/
+
+body {
+  margin: 0 auto;
+  font-family: "Manrope", sans-serif;
+}
+
+.wrapper-header {
+  background-image: url(../images/tourelle1676.jpg);
+  background-size: cover;
+  background-position: center top;
+
+  position: relative;
+  top: -100px;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.contact {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff !important;
+  padding: 8px 35px;
+  background-color: #005A70;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.25s, box-shadow 0.25s, transform 0.25s;
+  box-shadow: 0 0 0 rgba(0, 90, 112, 0);
+}
+
+.contact:hover {
+  background-color: #017C9B;
+  box-shadow: 0 6px 6px rgba(1, 124, 155, 0.25);
+  transform: translateY(-2px);
+}
+
+section {
+  padding:0 20px;
+  text-align: center;
+}
+
+p {
+  font-family: "Manrope", sans-serif;
+  color: #005A70;
+  font-size: 18px;
+  text-align: center;
+  line-height: 100%;
+  margin: 0 auto;
+  padding: 20px 0 40px ;
+  max-width: 550px;
+}
+
+h2 {
+  font-family: "DM Serif Display", serif;
+  color: #005A70;
+  text-align: center;
+  font-size: 48px;
+}
+
+h3 {
+  font-family: "DM Serif Display", serif;
+  color: #000000;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+#header {
+  padding: 200px 20px 240px;
+  margin: 0 auto;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+
+}
+
+#header h1 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 64px;
+  line-height: 100%;
+
+  max-width: 1280px;
+}
+
+#header p {
+  color: #ffffff;
+}
+
+#nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0 auto;
+
+  padding: 15px 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
+#nav .title {
+  font-family: "DM Serif Display", serif;
+  color: #005A70;
+  
+  font-size: 24px;
+}
+
+#nav a {
+  text-decoration: none;
+  font-weight: 16px;
+
+  color: #005A70;
+}
+
+#nav ul {
+  display: flex;
+  flex-direction: row;
+
+  list-style-type: none;
+}
+
+#nav ul li:not(:last-of-type) {
+  padding-right:40px;
+}
+
+#equipements {
+  width: 100%;
+}
+
+#equipements h2 {
+  margin: 0 auto;
+}
+
+/* Grid responsive */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: clamp(5px, 3vw, 10px);
+}
+
+/* Force 6 colonnes max sur grand écran */
+@media (min-width: 1400px) {
+    .grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* Tablette : 3 colonnes */
+@media (max-width: 1023px) and (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile : 2 colonnes */
+@media (max-width: 767px) and (min-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Petit mobile : 1 colonne */
+@media (max-width: 479px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Style des items (personnalise selon tes besoins) */
+.grid-item {
+  background-color: #FCF7F2;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  border-radius: 5px;
+}
+
+.grid-item p {
+  padding: 20px;
+}
+
+#equipements .contact {
+  margin: 50px;
+  text-align: center;
+}
+
+
+#photos {
+  background-color: #FCF7F2;
+  padding: 80px 20px;
+  margin-top: 20px;
+}
+
+/* Galerie Grid - 3 colonnes de base */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 400px; /* HAUTEUR FIXE DES LIGNES */
+    gap: 12px;
+}
+
+/* Photo grande : 3 colonnes (pleine largeur) */
+.gallery-item.large {
+    grid-column: span 3;
+}
+
+/* Photo moyenne : 2 colonnes */
+.gallery-item.medium {
+    grid-column: span 2;
+}
+
+/* Photo petite : 1 colonne */
+.gallery-item.small {
+    grid-column: span 1;
+}
+
+/* Style des items - SANS HEIGHT */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive Tablette */
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 400px;
+        gap: 10px;
+    }
+    
+    .gallery-item.large {
+        grid-column: span 2;
+    }
+    
+    .gallery-item.medium {
+        grid-column: span 1;
+    }
+    
+    .gallery-item.small {
+        grid-column: span 1;
+    }
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+        gap: 8px;
+    }
+    
+    .gallery-item.large {
+        grid-column: span 2;
+    }
+    
+    .gallery-item.medium {
+        grid-column: span 2;
+    }
+    
+    .gallery-item.small {
+        grid-column: span 1;
+    }
+}
+
+/* Très petit mobile */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 220px;
+        gap: 8px;
+    }
+    
+    .gallery-item.large,
+    .gallery-item.medium,
+    .gallery-item.small {
+        grid-column: span 1;
+    }
+}
+
+
+:root {
+    --color-text: #1a1a1a;
+    --color-text-light: #666;
+    --color-border: #ddd;
+    --color-bg: #f9f7f4;
+    --color-card-bg: #ffffff;
+    --space-16: 16px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --radius-8: 8px;
+}
+
+#sejour {
+  padding-top: 80px;
+  text-align: left;
+
+  padding-bottom: 80px;
+}
+
+
+.grid-sejour {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-24);
+    margin-bottom: var(--space-32);
+}
+
+.card {
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+
+    background-color: #FCF7F2;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.card-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%) brightness(0) contrast(1);
+    object-fit: contain;
+}
+
+.card-title {
+  margin-bottom: var(--space-16);
+}
+
+.card-list {
+    list-style: none;
+}
+
+.card-list li {
+    font-family: manrope;
+    font-size: 16px;
+    color: #000000;
+    padding-left: 20px;
+    position: relative;
+}
+
+.card-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-text);
+}
+
+.card-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-16);
+    }
+
+    body {
+        padding: var(--space-16);
+    }
+
+    .card {
+        padding: var(--space-16);
+    }
+
+    .grid-sejour {
+      grid-template-columns: 1fr;
+    }
+}
+
+.card {
+  background-position: center center;
+  background-color: rgba(255,255,255,0.9);
+  background-blend-mode: lighten;
+
+  background-size: cover;
+}
+
+.card.vaiselle {
+  background-image: url(../images/garencieres-en-drouais-10.jpg);
+}
+
+.card.chambre {
+  background-image: url(../images/garencieres-en-drouais-6.jpg);
+}
+
+.card.sdb {
+  background-image: url(../images/garencieres-en-drouais-7.jpg);
+}
+
+.card.famille {
+  background-image: url(../images/enfant_back.jpg);
+}
+
+.card.jeux {
+  background-image: url(../images/divertissement.jpg);
+}
+
+.card.chemine {
+  background-image: url(../images/chemine.jpg);
+}
+
+.card.jardin {
+  background-image: url(../images/garencieres-en-drouais-1.jpg);
+}
+
+.card.pratique {
+  background-image: url(../images/pratique.jpg);
+}
+
+.interlude {
+  background-image: url(../images/interlude.jpg);
+  width: 100%;
+  height: 750px;
+  background-position: center center;
+}
+
+#avis {
+  background-color: #FCF7F2;
+  padding: 80px 20px;
+}
+
+#avis h3 {
+  display: inline;
+  color: #217898;
+}
+
+.subtitle {
+  text-align: center;
+  color: #217898;
+  font-size: 1rem;
+  margin-bottom: 2em;
+  padding: 30px 0;
+}
+.testimonials-flex {
+  display: flex;
+  gap: 20px;
+  justify-content: left;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+.testimonial {
+  border-radius: 5px;
+  padding: 30px;
+  background: #fff;
+}
+
+.stars {
+  color: #f8be33;
+  font-size: 1.5em;
+  margin-right: 0.5em;
+}
+.testimonial p {
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: left;
+  padding: 0px;
+  color: #000000;
+}
+
+@media (max-width: 900px) {
+  .container {
+    max-width: 100%;
+  }
+  .testimonials-flex {
+    flex-direction: column;
+  }
+  #avis p {
+    max-width: none;
+  }
+}
+
+
+#contact {
+  background-image: url(../images/contact.jpg);
+  width: 100%;
+  padding: 250px 0;
+  background-position: center center;
+}
+
+#contact h2, #contact p {
+  color: #fff;
+}
+
+
+#faq {
+  padding: 80px 0;
+}
+
+.accordion {
+  padding: 80px 100px 0;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #145b73;
+  padding: 0.4em 0;
+
+  text-align: left;
+}
+.accordion-question {
+  font-family: "DM Serif Display", serif;
+  font-weight: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.13em;
+  color: #000;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+.accordion-question:hover {
+  color: #217898;
+}
+.accordion-chev {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #145b73;
+  border-bottom: 2px solid #145b73;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+  margin-left: 14px;
+  margin-bottom: 2px;
+}
+
+.accordion-item.active .accordion-chev {
+  transform: rotate(225deg);
+}
+
+.accordion-answer {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 14px;
+  color: #222;
+  margin-top: 6px;
+  transition: max-height .3s ease;
+}
+.accordion-item.active .accordion-answer {
+  max-height: 120px; /* adapte selon tes besoins */
+  margin-bottom: 0.4em;
+}
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  .faq-container { padding: 0 .5em; }
+}
