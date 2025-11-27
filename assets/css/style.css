@@ -17,9 +17,11 @@ body {
   top: -100px;
 }
 
-.wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
+#main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 
 .contact {
@@ -42,9 +44,10 @@ body {
   transform: translateY(-2px);
 }
 
-section {
+section:not(#photos) {
   padding:0 20px;
   text-align: center;
+  width: 100%;
 }
 
 p {
@@ -99,6 +102,11 @@ h3 {
   color: #ffffff;
 }
 
+.wrap {
+  max-width: 1280px;
+  width: 100%;
+}
+
 #nav {
   position: sticky;
   top: 0;
@@ -146,6 +154,8 @@ h3 {
 
 #equipements {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 #equipements h2 {
@@ -217,6 +227,12 @@ h3 {
   background-color: #FCF7F2;
   padding: 80px 20px;
   margin-top: 20px;
+  margin-bottom: 100px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Galerie Grid - 3 colonnes de base */
@@ -343,10 +359,8 @@ h3 {
 }
 
 #sejour {
-  padding-top: 80px;
-  text-align: left;
-
-  padding-bottom: 80px;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -361,7 +375,7 @@ h3 {
     padding: 40px;
     position: relative;
     overflow: hidden;
-
+  text-align: left;
     background-color: #FCF7F2;
 }
 
@@ -489,11 +503,15 @@ h3 {
   width: 100%;
   height: 750px;
   background-position: center center;
+  background-size: cover;
 }
 
 #avis {
   background-color: #FCF7F2;
-  padding: 80px 20px;
+  padding: 80px 20px !important;
+
+  display: flex;
+  justify-content: center;
 }
 
 #avis h3 {
@@ -557,7 +575,7 @@ h3 {
 #contact {
   background-image: url(../images/contact.jpg);
   width: 100%;
-  padding: 250px 0;
+  padding: 250px 0 !important;
   background-position: center center;
 }
 
@@ -565,13 +583,24 @@ h3 {
   color: #fff;
 }
 
+.containerBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
 
 #faq {
-  padding: 80px 0;
+  padding: 80px 0 !important;
+
+  display: flex;
+  justify-content: center;
 }
 
 .accordion {
   padding: 80px 100px 0;
+
+
 }
 
 .accordion-item {
