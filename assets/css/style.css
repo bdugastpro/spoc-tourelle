@@ -731,3 +731,8 @@ h3 {
     padding: 10px;
 }
 }
+
+.footer-content p {
+  padding: 5px;
+  font-size: 12px;
+}
