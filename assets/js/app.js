@@ -70,3 +70,8 @@
                 if(!isActive) item.classList.add('active');
             });
         });
+
+        document.getElementById('nav-toggle').addEventListener('change', function() {
+    const ul = document.querySelector('#nav ul');
+    ul.classList.toggle('active');
+});
