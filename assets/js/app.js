@@ -31,7 +31,7 @@
         const offsetConfig = {
             '#header': 0,
             '#photos': 40,
-            '#sejour': 20,
+            '#sejour': 100,
             '#avis': 20,
             '#cta': 120
         };
